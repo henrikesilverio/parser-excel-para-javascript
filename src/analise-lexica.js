@@ -48,7 +48,7 @@ const lexica = function(codigo) {
     }
 
     var coluna = 0;
-    var delimitadores = /[(]|[)]/;
+    var delimitadores = /[(]|[)]|[\s]/;
     var podeIncluir = false;
     var token = "";
     var tokens = [];

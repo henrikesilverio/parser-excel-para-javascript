@@ -4,7 +4,7 @@
     "description": "Compilador excel para javascript",
     "main": "main.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "./node_modules/.bin/jasmine"
     },
     "repository": {
         "type": "git",
@@ -16,5 +16,9 @@
     "bugs": {
         "url": "https://github.com/henrikesilverio/Compilador-excel-para-javascript/issues"
     },
-    "homepage": "https://github.com/henrikesilverio/Compilador-excel-para-javascript#readme"
+    "homepage": "https://github.com/henrikesilverio/Compilador-excel-para-javascript#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "jasmine": "^2.8.0"
+    }
 }
