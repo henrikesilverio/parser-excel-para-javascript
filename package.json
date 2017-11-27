@@ -1,7 +1,7 @@
 {
-    "name": "CompiladorExcelParaJavascript",
+    "name": "parserexcelparajavascript",
     "version": "1.0.0",
-    "description": "Compilador excel para javascript",
+    "description": "Parser excel para javascript",
     "main": "main.js",
     "scripts": {
         "test": "./node_modules/.bin/mocha --reporter spec",
