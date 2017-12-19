@@ -42,19 +42,22 @@ function adicionarToken(classificados, tokens) {
     tokens.push(obterSimboloTerminal(maiorInserido, prioridade));
 }
 
+function podeIncluir(codigo, coluna, classificados) {
+    var delimitadores = /[(]|[)]|[\s]|^undefined$/;
+    return delimitadores.test(codigo[coluna]) ||
+        delimitadores.test(codigo[coluna + 1]);
+}
+
 const lexica = function(codigo) {
     if (typeof codigo !== 'string') {
         throw 'o valor de entrada não é uma "string"';
     }
 
     var coluna = 0;
-    var delimitadores = /[(]|[)]|[\s]/;
-    var podeIncluir = false;
     var token = "";
     var tokens = [];
     var classificados = ["", "", "", "", ""];
     while (coluna < codigo.length) {
-        podeIncluir = delimitadores.test(codigo[coluna]) || delimitadores.test(codigo[coluna + 1]);
         token += codigo[coluna];
 
         if (classificadores["palavrasReservadas"].padrao.test(token)) {
@@ -72,7 +75,7 @@ const lexica = function(codigo) {
         if (classificadores["identificador"].padrao.test(token)) {
             classificados[4] = token;
         }
-        if (podeIncluir) {
+        if (podeIncluir(codigo, coluna, classificados)) {
             adicionarToken(classificados, tokens);
             token = "";
             classificados = ["", "", "", "", ""];
