@@ -1,12 +1,12 @@
 'use strict'
 
 const assert = require('chai').assert;
-const automato = require('../src/automato-string');
+const automato = require('../src/cadeia-caracteres');
 
 var cadeia = [];
 var resultado = "";
 
-describe("Autômato string", function () {
+describe("Autômato cadeia de caracteres", function () {
     it("Deve retornar 'Cadeia não aceita!' para valores diferentes de string", function () {
         cadeia = [""];
         resultado = automato(cadeia);

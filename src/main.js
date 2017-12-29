@@ -1,7 +1,7 @@
 'use strict'
 
 // const lexica = require('./analise-lexica');
-const automato = require('./automato-palavra-reservada');
+const automato = require('./palavra-reservada');
 
 // var tokens = lexica('"("');
 

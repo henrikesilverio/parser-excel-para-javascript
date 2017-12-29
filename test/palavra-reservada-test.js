@@ -1,7 +1,7 @@
 'use strict'
 
 const assert = require('chai').assert;
-const automato = require('../src/automato-palavra-reservada');
+const automato = require('../src/palavra-reservada');
 
 var cadeia = [];
 var resultado = "";

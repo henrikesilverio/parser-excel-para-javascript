@@ -1,25 +1,6 @@
 'use strict'
 
-var alfabeto = [
-    [
-        { "padrao": /^S$/, "proximoEstado": 1 }
-    ],
-    [
-        { "padrao": /^U$/, "proximoEstado": 2 }
-    ],
-    [
-        { "padrao": /^M$/, "proximoEstado": 3 }
-    ],
-    [
-        { "padrao": /^I$/, "proximoEstado": 4 },
-        { "padrao": /.*/, "proximoEstado": null }
-    ],
-    [
-        { "padrao": /^F$/, "proximoEstado": null }
-    ]
-];
-
-function automato(cadeia) {
+function automato(alfabeto, cadeia) {
     var indice = 0;
     var linha = 0;
     var coluna = 0;
