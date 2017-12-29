@@ -2,16 +2,20 @@
 
 var alfabeto = [
     [
-        { "padrao": /^\"$/, "proximoEstado": 1 },
-        { "padrao": /^\'$/, "proximoEstado": 2 }
+        { "padrao": /^S$/, "proximoEstado": 1 }
     ],
     [
-        { "padrao": /[^\"]+/, "proximoEstado": 1 },
-        { "padrao": /^\"$/, "proximoEstado": null }
+        { "padrao": /^U$/, "proximoEstado": 2 }
     ],
     [
-        { "padrao": /[^\']+/, "proximoEstado": 2 },
-        { "padrao": /^\'$/, "proximoEstado": null }
+        { "padrao": /^M$/, "proximoEstado": 3 }
+    ],
+    [
+        { "padrao": /^I$/, "proximoEstado": 4 },
+        { "padrao": /.*/, "proximoEstado": null }
+    ],
+    [
+        { "padrao": /^F$/, "proximoEstado": null }
     ]
 ];
 

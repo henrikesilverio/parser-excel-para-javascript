@@ -1,7 +1,7 @@
 'use strict'
 
 // const lexica = require('./analise-lexica');
-const automato = require('./automato-string');
+const automato = require('./automato-palavra-reservada');
 
 // var tokens = lexica('"("');
 
@@ -9,7 +9,7 @@ const automato = require('./automato-string');
 //     console.log(tokens[i]);
 // }
 
-var cadeia = ["\""];
+var cadeia = ["S", "U", "M"];
 var resultado = "";
 
 console.log(automato(cadeia));
