@@ -14,7 +14,7 @@ var alfabeto = [
     ],
     [
         { "padrao": /^I$/, "proximoEstado": 4 },
-        { "padrao": /.*/, "proximoEstado": null }
+        { "padrao": /.*/, "proximoEstado": null, "retroceder": true }
     ],
     [
         { "padrao": /^F$/, "proximoEstado": null }

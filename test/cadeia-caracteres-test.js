@@ -7,89 +7,89 @@ var cadeia = [];
 var resultado = "";
 
 describe("Autômato cadeia de caracteres", function () {
-    it("Deve retornar 'Cadeia não aceita!' para valores diferentes de string", function () {
+    it("Deve ter resultado inválido para valores diferentes de string", function () {
         cadeia = [""];
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
 
         cadeia = "skdasdkahdsjkh".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
 
         cadeia = "@$!#%$#¨!".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
     });
 
-    it("Deve retornar 'Cadeia não aceita!' para string incompleta com aspas simples", function () {
+    it("Deve ter resultado inválido para string incompleta com aspas simples", function () {
         cadeia = "\"".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
 
         cadeia = "\"     ".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
 
         cadeia = "\"SA1*!'$.split('')";
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
     });
 
-    it("Deve retornar 'Cadeia não aceita!' para string incompleta com aspas duplas", function () {
+    it("Deve ter resultado inválido para string incompleta com aspas duplas", function () {
         cadeia = "'".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
 
         cadeia = "'     ".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
 
         cadeia = "'SA1*!\"$".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia não aceita!");
+        assert.isFalse(resultado.estaValido);
     });
 
-    it("Deve retornar 'Cadeia aceita!' para string com aspas simples", function () {
+    it("Deve ter resultado valido para string com aspas simples", function () {
         cadeia = "''".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "'!'".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "'\"'".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "'\"' ".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "' '".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
     });
 
-    it("Deve retornar 'Cadeia aceita!' para string com aspas duplas", function () {
+    it("Deve ter resultado valido para string com aspas duplas", function () {
         cadeia = "\"\"".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "\"!\"".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "\"'\"".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "\"' \"".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
 
         cadeia = "\" \"".split('');
         resultado = automato(cadeia);
-        assert.equal(resultado, "Cadeia aceita!");
+        assert.isTrue(resultado.estaValido);
     });
 });

@@ -1,7 +1,12 @@
 'use strict'
 
 // const lexica = require('./analise-lexica');
-const automato = require('./palavra-reservada');
+const palavraReservada = require('./palavra-reservada');
+const cadeiaCaracteres = require('./cadeia-caracteres');
+const automatos = [
+    palavraReservada,
+    cadeiaCaracteres
+];
 
 // var tokens = lexica('"("');
 
@@ -9,7 +14,23 @@ const automato = require('./palavra-reservada');
 //     console.log(tokens[i]);
 // }
 
-var cadeia = ["S", "U", "M"];
-var resultado = "";
+var cadeia = 'SSUM""'.split('');
+var tokens = [];
+var indice = 0;
 
-console.log(automato(cadeia));
+while (cadeia.length > 0) {
+    tokens[indice] = { "cursor": -1 };
+    automatos.forEach(function (automato) {
+        var resultado = automato(cadeia);
+        tokens[indice] = resultado.cursor > tokens[indice].cursor
+                ? resultado
+                : tokens[indice];
+    });
+    var posicaoCursor = tokens[indice].cursor === 0 ? 1 : tokens[indice].cursor;
+    cadeia = cadeia.slice(posicaoCursor);
+    indice++;
+}
+
+for (var i = 0; i < tokens.length; i++) {
+    console.log(tokens[i].palavra);
+}
