@@ -1,12 +1,12 @@
 'use strict'
 
 const assert = require('chai').assert;
-const automato = require('../src/palavra-reservada');
+const automato = require('../src/palavras-reservadas');
 
 var cadeia = [];
 var resultado = "";
 
-describe("Autômato palavra reservada", function () {
+describe("Autômato palavras reservadas", function () {
     it("Deve ter resultado inválido para palavras diferentes", function () {
         cadeia = "skdasdkahdsjkh".split('');
         resultado = automato(cadeia);
@@ -35,7 +35,7 @@ describe("Autômato palavra reservada", function () {
         assert.isFalse(resultado.estaValido);
     });
 
-    it("Deve ter resultado valido para palavras reservadas", function () {
+    it("Deve ter resultado válido para palavras reservadas", function () {
         cadeia = "SUM".split('');
         resultado = automato(cadeia);
         assert.isTrue(resultado.estaValido);

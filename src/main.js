@@ -1,11 +1,12 @@
 'use strict'
 
 // const lexica = require('./analise-lexica');
-const palavraReservada = require('./palavra-reservada');
+const palavrasReservadas = require('./palavras-reservadas');
 const cadeiaCaracteres = require('./cadeia-caracteres');
+const simbolos = require('./simbolos');
+
 const automatos = [
-    palavraReservada,
-    cadeiaCaracteres
+    simbolos
 ];
 
 // var tokens = lexica('"("');
@@ -14,7 +15,7 @@ const automatos = [
 //     console.log(tokens[i]);
 // }
 
-var cadeia = 'SSUM""'.split('');
+var cadeia = '(SSUM""'.split('');
 var tokens = [];
 var indice = 0;
 

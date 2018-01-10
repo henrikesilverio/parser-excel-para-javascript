@@ -49,7 +49,7 @@ describe("Autômato cadeia de caracteres", function () {
         assert.isFalse(resultado.estaValido);
     });
 
-    it("Deve ter resultado valido para string com aspas simples", function () {
+    it("Deve ter resultado válido para string com aspas simples", function () {
         cadeia = "''".split('');
         resultado = automato(cadeia);
         assert.isTrue(resultado.estaValido);
@@ -71,7 +71,7 @@ describe("Autômato cadeia de caracteres", function () {
         assert.isTrue(resultado.estaValido);
     });
 
-    it("Deve ter resultado valido para string com aspas duplas", function () {
+    it("Deve ter resultado válido para string com aspas duplas", function () {
         cadeia = "\"\"".split('');
         resultado = automato(cadeia);
         assert.isTrue(resultado.estaValido);

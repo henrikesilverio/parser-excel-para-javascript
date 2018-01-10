@@ -21,8 +21,8 @@ var alfabeto = [
     ]
 ];
 
-function palavraReservada(cadeia) {
+function palavrasReservadas(cadeia) {
     return automato(alfabeto, cadeia);
 }
 
-module.exports = palavraReservada;
+module.exports = palavrasReservadas;
