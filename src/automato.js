@@ -1,5 +1,9 @@
 'use strict'
 
+function obterSimbolo(simbolo) {
+    return simbolo === undefined ? simbolo : "";
+}
+
 function automato(alfabeto, cadeia) {
     var cursor = 0;
     var linha = 0;
@@ -16,7 +20,7 @@ function automato(alfabeto, cadeia) {
         while (estado != undefined && !estado.padrao.test(simbolo)) {
             estado = alfabeto[linha][coluna++];
         }
-        palavra += cadeia[cursor];
+        palavra += obterSimbolo(cadeia[cursor]);
         if (estado === undefined) {
             estado = linha === 0
                 ? { "proximoEstado": 0 }

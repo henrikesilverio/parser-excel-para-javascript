@@ -4,9 +4,10 @@
 const palavrasReservadas = require('./palavras-reservadas');
 const cadeiaCaracteres = require('./cadeia-caracteres');
 const simbolos = require('./simbolos');
+const numeros = require('./numeros');
 
 const automatos = [
-    simbolos
+    numeros
 ];
 
 // var tokens = lexica('"("');
@@ -15,7 +16,7 @@ const automatos = [
 //     console.log(tokens[i]);
 // }
 
-var cadeia = '(SSUM""'.split('');
+var cadeia = "1.".split('');
 var tokens = [];
 var indice = 0;
 
